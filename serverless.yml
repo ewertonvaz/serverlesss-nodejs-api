@@ -1,4 +1,4 @@
-service: serverlesss-nodejs-api
+service: serverless-nodejs-api
 frameworkVersion: '3'
 
 provider:
@@ -17,3 +17,10 @@ functions:
 plugins:
   - serverless-offline
   - serverless-dotenv-plugin
+
+custom:
+  dotenv:
+    exclude:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_SESSION_TOKEN

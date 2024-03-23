@@ -2,4 +2,5 @@ node_modules
 .serverless
 project.cfg
 .env
+policy.json
 

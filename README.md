@@ -104,3 +104,11 @@ serverless offline
 ```
 
 To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
+
+
+## My annotations
+To run a PostgreSQL cli on Docker container:
+``` 
+MSYS_NO_PATHCONV=1 docker run --name postgres_cli -it --rm -v "$PWD":/home -w /home --entrypoint "" --env-file .env_postgres postgres:16 sh
+
+``` 
