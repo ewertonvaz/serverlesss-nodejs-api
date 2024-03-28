@@ -2,10 +2,10 @@ const clients = require("./client.js");
 const schemas = require("./schemas.js");
 const { desc, eq } = require("drizzle-orm");
 
-async function newLead(email){
+async function newLead(data){
     const db = await clients.getDrizzleDbClient();
     const result = await db.insert(schemas.LeadTable).values({
-        email
+        email: data.email
     }).returning({newId: schemas.LeadTable.id, newEmail: schemas.LeadTable.email});
     if (result.length === 1){
         return result[0]

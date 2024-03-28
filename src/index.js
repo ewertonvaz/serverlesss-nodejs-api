@@ -3,7 +3,7 @@ const express = require("express");
 const { getDbClient } = require("./db/client");
 const { newLead, listLeads, getLead} = require("./db/crud");
 const validators = require("./db/validators");;
-
+const STAGE = process.env.STAGE || "prod"
 const app = express();
 app.use(express.json());
 
@@ -15,6 +15,7 @@ app.get("/", async (req, res, next) => {
   return res.status(200).json({
     message: "Hello from root!",
     delta: delta,
+    stage: STAGE
   });
 });
 
