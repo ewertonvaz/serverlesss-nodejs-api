@@ -16,7 +16,6 @@ jobs:
       GH_TOKEN: ${{ github.token }} # github cli -> gh
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-node@v3
       with:
           fetch-depth: 0 
     - name: Use Node.js
